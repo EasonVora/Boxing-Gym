@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Image fallback size for lazy-loaded or responsive images */
+img:is([sizes="auto" i], [sizes^="auto," i]) {
+  contain-intrinsic-size: 1000px 600px;
+}
+/* Utility Classes */
+.inline-block {
+  display: inline-block;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+a:hover {
+  color: #d32424;
+}
+
+/* MAIN CONTENT */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #282828;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+/* .top-bar */
+.top-bar {
+  display: flex;
+  padding: 10px;
+  background-color: #1c1c1c;
+  margin-bottom: 50px;
+}
+/* .address-group */
+.address-group {
+  flex: 1 1 auto;
+}
+.map-logo {
+  width: 16px;
+  height: 16px;
+  padding-bottom: 0;
+  margin-bottom: -3px; /* adjusts logo to appear on the same line */
+}
+.address {
+  font-size: 16px;
+}
+/* .top-bar-duo */
+.top-bar-duo {
+  display: flex;
+}
+/* .phone-group */
+.phone-logo {
+  width: 16px;
+  height: 16px;
+  padding-bottom: 0;
+  margin-left: 10px;
+  margin-bottom: -5px; /* adjusts logo to appear on the same line */
+}
+.phone-number {
+  font-size: 16px;
+}
+/* .email-group */
+.email {
+  font-size: 16px;
+}
+.email-logo {
+  width: 16px;
+  height: 14.5px;
+  padding-bottom: 0;
+  margin-bottom: -3px;
+}
+
+/* Top Bar media queries */
+@media screen and (max-width: 779px) {
+  /* Mobile and Small Tablets */
+  .top-bar {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+  .address-group {
+    justify-items: flex-start;
+    align-items: center;
+    display: flex;
+  }
+  .top-bar-duo {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .phone-group {
+    align-items: center;
+    display: flex;
+  }
+}
+@media screen and (min-width: 780px) {
+  /* Larger Screens */
+  .top-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .top-bar-duo {
+    gap: 20px;
+    flex-direction: row;
+    margin-left: auto;
+  }
+}
+
+/* NAV (navigation) */
+@media screen and (max-width: 940px) {
+  /* Mobile */
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  .nav-links li {
+    background-color: #d32424;
+    display: block;
+    margin-left: 0;
+    margin-top: 1px;
+    padding: 5px 20px;
+    width: 150px;
+  }
+  .website-logo {
+    margin: auto;
+  }
+}
+@media screen and (min-width: 941px) and (max-width: 1299px) {
+  /* Tablet */
+  nav {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  .nav-links {
+    margin: auto;
+  }
+  .nav-links li {
+    display: block;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .website-logo {
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1300px) {
+  /* Desktop */
+  nav {
+    display: flex;
+    flex-direction: row;
+    margin-right: 40px;
+  }
+  .website-logo {
+    margin: auto auto auto 20px;
+  }
+}
+
+nav {
+  display: flexbox;
+}
+.nav-links {
+  list-style: none;
+}
+.nav-links li {
+  display: inline-block;
+  margin-left: 0px;
+  margin: 1px 10px;
+  font-weight: bold;
+}
+
+/* Hamburger button */
+.hamburger-button {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 10px 20px;
+}
+
+/* Responsive nav below 940px */
+@media screen and (max-width: 940px) {
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #d32424;
+  }
+
+  .hamburger-button {
+    display: block;
+  }
+
+  .website-logo {
+    margin: 10px auto 0;
+  }
+}
